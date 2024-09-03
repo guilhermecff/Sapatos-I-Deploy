@@ -144,14 +144,14 @@ def create_bar_chart(data, title, xlabel, ylabel, xtick_rotation=0, color='#d336
         xaxis_title=xlabel,
         yaxis_title=ylabel,
         title_font=dict(size=20),
-        plot_bgcolor='#002b36',
-        paper_bgcolor='#002b36',
-        font=dict(color='white'),
+        plot_bgcolor='white',  # Ajuste para fundo branco
+        paper_bgcolor='white',  # Ajuste para fundo branco
+        font=dict(color='black'),  # Texto em preto para melhor contraste
         xaxis=dict(tickangle=xtick_rotation),
         yaxis=dict(showgrid=False)
     )
-    fig.update_xaxes(tickangle=xtick_rotation, tickfont=dict(size=14), color='white', showgrid=False)
-    fig.update_yaxes(tickfont=dict(size=14), color='white')
+    fig.update_xaxes(tickangle=xtick_rotation, tickfont=dict(size=14), color='black', showgrid=False)
+    fig.update_yaxes(tickfont=dict(size=14), color='black')
     fig.update_traces(
         hovertemplate='<b>%{x}</b><br>Quantidade: %{y}<extra></extra>'
     )
@@ -447,25 +447,25 @@ with cols6[0]:
             marker=dict(color=color),
         ))
 
-    # Update layout for dark theme
-    fig.update_layout(
-        title='Classificação dos Aspectos em Ordem de Importância',
-        xaxis_title='Frequency',
-        yaxis_title='Aspects',
-        yaxis=dict(
-            tickmode='array',
-            tickvals=[x + bar_width for x in range(len(counts[relevant_columns[0]]))],
-            ticktext=relevant_columns,
-        ),
-        plot_bgcolor='#002b36',
-        paper_bgcolor='#002b36',
-        font=dict(color='white'),
-        legend=dict(
-            bgcolor='#002b36',
-            bordercolor='#002b36',
-            font=dict(color='white')
+        # Update layout for dark theme
+        fig.update_layout(
+            title='Classificação dos Aspectos em Ordem de Importância',
+            xaxis_title='Frequency',
+            yaxis_title='Aspects',
+            yaxis=dict(
+                tickmode='array',
+                tickvals=[x + bar_width for x in range(len(counts[relevant_columns[0]]))],
+                ticktext=relevant_columns,
+            ),
+            plot_bgcolor='white',  # Ajuste para fundo branco
+            paper_bgcolor='white',  # Ajuste para fundo branco
+            font=dict(color='black'),  # Texto em preto para melhor contraste
+            legend=dict(
+                bgcolor='white',
+                bordercolor='white',
+                font=dict(color='black')
+            )
         )
-    )
 
     # Display the plot in Streamlit
     st.plotly_chart(fig)
