@@ -26,9 +26,9 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Carregar dados
-data_whats = pd.read_csv('data/Sapatos 1- Formulário de Pesquisa Externo Whats_August 6, 2024_14.04.csv')
-data_netquest = pd.read_csv('data/Sapatos 1- Formulário de Pesquisa Externo Qualtrics_August 6, 2024_13.42.csv')
-data_interno = pd.read_csv('data/Sapatos 1- Formulário de Pesquisa Interno_August 6, 2024_14.04.csv')
+data_whats = pd.read_csv('Sapatos 1- Formulário de Pesquisa Externo Whats_August 6, 2024_14.04.csv')
+data_netquest = pd.read_csv('Sapatos 1- Formulário de Pesquisa Externo Qualtrics_August 6, 2024_13.42.csv')
+data_interno = pd.read_csv('Sapatos 1- Formulário de Pesquisa Interno_August 6, 2024_14.04.csv')
 
 data_whats = data_whats.iloc[:, 17:]
 data_whats = data_whats.drop([0, 1])
